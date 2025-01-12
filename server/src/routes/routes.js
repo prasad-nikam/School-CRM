@@ -20,7 +20,7 @@ router.get("/getLoginDetails", authUser, getLoginDetails);
 router.get("/teacherDetails", authUser, getTeacherDetails);
 router.get("/studentDetails", authUser, getStudentDetails);
 
-router.get("/", authUser, (req, res) => {
+router.get("/", (req, res) => {
     res.send("hello School");
 });
 
