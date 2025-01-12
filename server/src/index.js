@@ -17,9 +17,9 @@ connectDB()
             console.log("App error: ", error);
             throw error;
         });
-        app.listen(PORT || 8080, HOST, () => {
+        app.listen(PORT || 8080, "0.0.0.0", () => {
             seedDatabase();
-            console.log(`server is running on http://${HOST}:${PORT}`);
+            console.log(`server is running on http://${"0.0.0.0"}:${PORT}`);
         });
     })
     .catch((err) => {
