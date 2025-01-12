@@ -63,6 +63,7 @@ teacherSchema.methods.generateAccessToken = function () {
         {
             id: this._id,
             email: this.email,
+            role: "teacher",
         },
         process.env.ACCESS_TOKEN_SECRET,
         {

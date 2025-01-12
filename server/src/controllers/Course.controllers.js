@@ -3,7 +3,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 
 // Create a Course
 export const createCourse = asyncHandler(async (req, res) => {
-    const { classname, year, studentfee, maxStudent, teacher } = req.body;
+    const { classname, year, studentfee, maxStudent } = req.body;
 
     if (req.user.role !== "admin") {
         return res.status(403).json({ message: "Access denied" });
@@ -14,7 +14,6 @@ export const createCourse = asyncHandler(async (req, res) => {
         year,
         studentfee,
         maxStudent,
-        teacher,
     });
     res.status(201).json(course);
 });

@@ -26,7 +26,7 @@ export default async (req, res) => {
             $push: { students: student.id },
         });
         const token = jwt.sign(
-            { id: student._id, email },
+            { id: student._id, role: "student", email },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
         );

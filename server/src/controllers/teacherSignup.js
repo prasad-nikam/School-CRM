@@ -35,7 +35,7 @@ export default async (req, res) => {
             teacher: teacher.id,
         });
         const token = jwt.sign(
-            { id: teacher._id, email },
+            { id: teacher._id, role: "teacher", email },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
         );
